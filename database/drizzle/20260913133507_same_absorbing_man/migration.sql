@@ -1,0 +1,3 @@
+ALTER TABLE "file" DROP CONSTRAINT "file_size_check", ADD CONSTRAINT "file_size_check" CHECK ("size" >= 0);--> statement-breakpoint
+ALTER TABLE "permission" DROP CONSTRAINT "permission_resource_check", ADD CONSTRAINT "permission_resource_check" CHECK (("page_id" is not null and "database_id" is null) or ("page_id" is null and "database_id" is not null));--> statement-breakpoint
+ALTER TABLE "permission" DROP CONSTRAINT "permission_subject_check", ADD CONSTRAINT "permission_subject_check" CHECK (("subject_type" = 'public' and "subject_id" is null) or ("subject_type" <> 'public' and "subject_id" is not null));

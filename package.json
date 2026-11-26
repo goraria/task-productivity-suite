@@ -1,0 +1,68 @@
+{
+  "name": "@gorth-com/task-productivity-suite",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.4",
+  "scripts": {
+    "prettier": "prettier . --write",
+    "dev": "next dev --port 3034",
+    "build": "next build",
+    "start": "next start --port 3034",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "db:migrate-auth": "bun scripts/migrate-better-auth.mjs",
+    "test:resource": "vitest run --config vitest.resource.config.ts",
+    "test:cloud": "bun scripts/test-cloud.mjs",
+    "test:platform": "bun scripts/test-platform.mjs",
+    "db:migrate-domain": "bun scripts/migrate-domain.mjs"
+  },
+  "dependencies": {
+    "@gorth-com/primitive": "^0.0.0-alpha.12",
+    "@gorth-com/principle": "0.0.0-alpha.12",
+    "@gorth-com/structure": "0.0.0-alpha.12",
+    "@hono/vercel": "^1.0.1",
+    "@vercel/otel": "^2.3.0",
+    "@vercel/queue": "0.11.0",
+    "better-auth": "^1.7.27",
+    "drizzle-orm": "1.0.0-rc.4",
+    "hono": "^4.13.21",
+    "next": "16.4.6",
+    "next-themes": "^0.4.6",
+    "postgres": "^4.1.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@next/env": "16.4.6",
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "drizzle-kit": "1.0.0-rc.4",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.4.6",
+    "postcss": "^8.5.33",
+    "prettier": "^3.10.1",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.1"
+  },
+  "bun": {
+    "onlyBuiltDependencies": [
+      "@gorth-com/primitive",
+      "@gorth-com/principle",
+      "@gorth-com/structure",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
+  }
+}

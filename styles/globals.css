@@ -1,0 +1,14 @@
+@import "tailwindcss" source(none);
+@import "@gorth-com/primitive/globals.css";
+
+@source "../app";
+@source "../components";
+@source "../features";
+@source "../hooks";
+@source "../layouts";
+@source "../lib";
+@source "../providers";
+@source "../services/client";
+@source "../utils";
+@source not "../pkg";
+@source not "../.next";
